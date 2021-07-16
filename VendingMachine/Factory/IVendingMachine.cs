@@ -15,5 +15,9 @@ namespace Factory
         void AddPayment(double amount, string currency, MoneySlotTypes slotType);
 
         void ValidateExchange();
+
+        void MakePayment();
+
+        void DispenseProduct();
     }
 }

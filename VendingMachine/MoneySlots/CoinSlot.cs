@@ -31,11 +31,27 @@ namespace MoneySlots
 
         public double AvailableBalance() => _balance;
 
+        public void FlushBalance()
+        {
+            _balance = 0;
+        }
+
         public bool HasEnoughChange(int count, double type)
         {
             if(_coinsBox.TryGetValue(type, out var coinCount))
             {
                 return coinCount >= count;
+            }
+
+            return false;
+        }
+
+        public bool SubtractMoney(double type, int count)
+        {
+            if (_coinsBox.ContainsKey(type))
+            {
+                _coinsBox[type] -= count;
+                return true;
             }
 
             return false;

@@ -37,5 +37,21 @@ namespace MoneySlots
 
             return false;
         }
+
+        public void FlushBalance()
+        {
+            _balance = 0;
+        }
+
+        public bool SubtractMoney(double type, int count)
+        {
+            if (_notesBox.ContainsKey(type))
+            {
+                _notesBox[type] -= count;
+                return true;
+            }
+
+            return false;
+        }
     }
 }

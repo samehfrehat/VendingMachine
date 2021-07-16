@@ -32,6 +32,8 @@ namespace SnacksVM
             _snackVM.AddPayment(0.5, "USD", MoneySlotTypes.CoinSlot);
 
             _snackVM.ValidateExchange();
+            _snackVM.MakePayment();
+            _snackVM.DispenseProduct();
             Console.WriteLine("Dispenses the selected snack...");
 
             Console.WriteLine("We Are Done!");

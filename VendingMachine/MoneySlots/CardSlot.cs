@@ -19,5 +19,14 @@
         {
             return true;
         }
+
+        public void FlushBalance()
+        {
+        }
+
+        public bool SubtractMoney(double type, int count)
+        {
+            return true;
+        }
     }
 }

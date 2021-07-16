@@ -14,6 +14,8 @@ namespace Factory
 
         private static readonly Lazy<IVendingMachine> _snackMachine = new(() => new SnackMachine());
 
+        private readonly int[] _change = new int[6] { 0,0,0,0,0,0};
+
         private IProduct _product = null;
 
         public static IVendingMachine Instance => _snackMachine.Value;
@@ -104,14 +106,14 @@ namespace Factory
             {
                 var remainingBalance = totalPayment - _product.Price;
 
-                var change = MakeChange(remainingBalance);
+                MakeChange(remainingBalance);
 
-                if (_noteSlot.HasEnoughChange(change[5], 50) &&
-                    _noteSlot.HasEnoughChange(change[4], 20) &&
-                    _coinSlot.HasEnoughChange(change[3], 1) &&
-                    _coinSlot.HasEnoughChange(change[2], 0.5) &&
-                    _coinSlot.HasEnoughChange(change[1], 0.2) &&
-                    _coinSlot.HasEnoughChange(change[0], 0.1) )
+                if (_noteSlot.HasEnoughChange(_change[5], 50) &&
+                    _noteSlot.HasEnoughChange(_change[4], 20) &&
+                    _coinSlot.HasEnoughChange(_change[3], 1) &&
+                    _coinSlot.HasEnoughChange(_change[2], 0.5) &&
+                    _coinSlot.HasEnoughChange(_change[1], 0.2) &&
+                    _coinSlot.HasEnoughChange(_change[0], 0.1) )
                 {
                     Console.WriteLine("Payment Accepted ...");
                     Console.WriteLine($"Please wait for the ${remainingBalance}");
@@ -133,6 +135,43 @@ namespace Factory
 
         }
 
+        public void MakePayment()
+        {
+            if(_change[5] > 0)
+            {
+                _noteSlot.SubtractMoney(50, _change[5]);
+            }
+            if (_change[4] > 0)
+            {
+                _noteSlot.SubtractMoney(20, _change[4]);
+            }
+            if (_change[3] > 0)
+            {
+                _coinSlot.SubtractMoney(1, _change[3]);
+            }
+            if (_change[2] > 0)
+            {
+                _coinSlot.SubtractMoney(0.5, _change[2]);
+            }
+            if (_change[1] > 0)
+            {
+                _coinSlot.SubtractMoney(0.2, _change[1]);
+            }
+            if (_change[0] > 0)
+            {
+                _coinSlot.SubtractMoney(0.1, _change[0]);
+            }
+        }
+
+        //here we need to decrease the quantity and reset all the used variables 
+        public void DispenseProduct()
+        {
+            productsPositions[(_product.Position.Item1, _product.Position.Item2)].Quantity--;
+            _coinSlot.FlushBalance();
+            _noteSlot.FlushBalance();
+            _cardSlot.FlushBalance();
+        }
+
         private IProduct CheckIfProductAvailable((int, int) position)
         {
             if (productsPositions.TryGetValue(position, out var product) && product.Quantity > 0)
@@ -144,48 +183,37 @@ namespace Factory
         }
 
         //coin change problem using greedy algorithm
-        private static int[] MakeChange(double remainingBalance)
+        private void MakeChange(double remainingBalance)
         {
-            var coins = new int[6];
-            var remainAmount = 0.0;
-
             if ((remainingBalance % 50) < remainingBalance)
             {
-                coins[5] = (int)(remainingBalance / 50);
-                remainAmount = remainingBalance % 50;
-                remainingBalance = remainAmount;
+                _change[5] = (int)(remainingBalance / 50);
+                remainingBalance %= 50;
             }
             if ((remainingBalance % 20) < remainingBalance)
             {
-                coins[4] = (int)(remainingBalance / 20);
-                remainAmount = remainingBalance % 20;
-                remainingBalance = remainAmount;
+                _change[4] = (int)(remainingBalance / 20);
+                remainingBalance %= 20;
             }
             if ((remainingBalance % 1) < remainingBalance)
             {
-                coins[3] = (int)(remainingBalance / 1);
-                remainAmount = remainingBalance % 1;
-                remainingBalance = remainAmount;
+                _change[3] = (int)(remainingBalance / 1);
+                remainingBalance %= 1;
             }
             if ((remainingBalance % 0.5) < remainingBalance)
             {
-                coins[2] = (int)(remainingBalance / 0.5);
-                remainAmount = remainingBalance % 0.5;
-                remainingBalance = remainAmount;
+                _change[2] = (int)(remainingBalance / 0.5);
+                remainingBalance %= 0.5;
             }
             if ((remainingBalance % 0.2) < remainingBalance)
             {
-                coins[1] = (int)(remainingBalance / 0.2);
-                remainAmount = remainingBalance % 0.2;
-                remainingBalance = remainAmount;
+                _change[1] = (int)(remainingBalance / 0.2);
+                remainingBalance %= 0.2;
             }
             if ((remainingBalance % 0.1) < remainingBalance)
             {
-                coins[0] = (int)(remainingBalance / 0.1);
-                remainAmount = remainingBalance % 0.1;
+                _change[0] = (int)(remainingBalance / 0.1);
             }
-
-            return coins;
         }
     }
 }
