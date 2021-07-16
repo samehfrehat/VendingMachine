@@ -1,5 +1,6 @@
 ﻿using Factory;
 using MoneySlots;
+using Moq;
 using Products;
 using System.Collections.Generic;
 using Xunit;
@@ -11,10 +12,13 @@ namespace Tests
         // Many test cases can be implemented this is an example of how it should be
       
         private readonly IVendingMachine _machine;
+        private readonly Mock<IProduct> _IProduct;
 
         public SnackMachineTests()
         {
             // do mocking for needed services
+            _IProduct = new Mock<IProduct>();
+
             _machine = SnackMachine.Instance;
         }
 
