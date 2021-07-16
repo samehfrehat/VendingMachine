@@ -8,6 +8,8 @@ namespace Tests
 {
     public class SnackMachineTests
     {
+        // Many test cases can be implemented this is an example of how it should be
+      
         private readonly IVendingMachine _machine;
 
         public SnackMachineTests()
