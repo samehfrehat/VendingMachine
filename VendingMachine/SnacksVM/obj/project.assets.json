@@ -1,0 +1,130 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "Factory/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "MoneySlots": "1.0.0",
+          "Products": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Factory.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Factory.dll": {}
+        }
+      },
+      "MoneySlots/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/MoneySlots.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MoneySlots.dll": {}
+        }
+      },
+      "Products/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Products.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Products.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Factory/1.0.0": {
+      "type": "project",
+      "path": "../Factory/Factory.csproj",
+      "msbuildProject": "../Factory/Factory.csproj"
+    },
+    "MoneySlots/1.0.0": {
+      "type": "project",
+      "path": "../MoneySlots/MoneySlots.csproj",
+      "msbuildProject": "../MoneySlots/MoneySlots.csproj"
+    },
+    "Products/1.0.0": {
+      "type": "project",
+      "path": "../Products/Products.csproj",
+      "msbuildProject": "../Products/Products.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "Factory >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\sfri\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\sfri\\source\\repos\\Assignments\\VendingMachine\\SnacksVM\\SnacksVM.csproj",
+      "projectName": "SnacksVM",
+      "projectPath": "C:\\Users\\sfri\\source\\repos\\Assignments\\VendingMachine\\SnacksVM\\SnacksVM.csproj",
+      "packagesPath": "C:\\Users\\sfri\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sfri\\source\\repos\\Assignments\\VendingMachine\\SnacksVM\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\sfri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://aerdata.pkgs.visualstudio.com/_packaging/Leasing/nuget/v3/index.json": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.telerik.com/nuget": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "C:\\Users\\sfri\\source\\repos\\Assignments\\VendingMachine\\Factory\\Factory.csproj": {
+              "projectPath": "C:\\Users\\sfri\\source\\repos\\Assignments\\VendingMachine\\Factory\\Factory.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

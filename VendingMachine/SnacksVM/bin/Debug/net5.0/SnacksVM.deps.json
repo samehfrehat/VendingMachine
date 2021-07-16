@@ -1,0 +1,60 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "SnacksVM/1.0.0": {
+        "dependencies": {
+          "Factory": "1.0.0"
+        },
+        "runtime": {
+          "SnacksVM.dll": {}
+        }
+      },
+      "Factory/1.0.0": {
+        "dependencies": {
+          "MoneySlots": "1.0.0",
+          "Products": "1.0.0"
+        },
+        "runtime": {
+          "Factory.dll": {}
+        }
+      },
+      "MoneySlots/1.0.0": {
+        "runtime": {
+          "MoneySlots.dll": {}
+        }
+      },
+      "Products/1.0.0": {
+        "runtime": {
+          "Products.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SnacksVM/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Factory/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MoneySlots/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Products/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
