@@ -6,10 +6,10 @@ namespace Factory
 {
     public abstract class BaseVendingMachine
     {
-        protected BaseVendingMachine(int rows, int colmns, VendingMachineTypes type)
+        protected BaseVendingMachine(int rows, int columns, VendingMachineTypes type)
         {
             _rows = rows;
-            _colmns = colmns;
+            _columns = columns;
             _type = type;
             _coinSlot = new CoinSlot();
             _noteSlot = new NoteSlot();
@@ -18,7 +18,7 @@ namespace Factory
 
         protected readonly int _rows;
 
-        protected readonly int _colmns;
+        protected readonly int _columns;
 
         protected readonly Dictionary<(int,int), IProduct> productsPositions = new();
 

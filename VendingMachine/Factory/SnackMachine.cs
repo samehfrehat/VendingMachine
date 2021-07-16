@@ -22,7 +22,7 @@ namespace Factory
 
         public bool AddProducts(IEnumerable<IProduct> products)
         {
-            if(products.Count() > _rows * _colmns)
+            if(products.Count() > _rows * _columns)
             {
                 return false;
             }
