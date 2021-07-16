@@ -20,17 +20,17 @@ namespace SnacksVM
             }
 
             Console.WriteLine("Please Insert Product Number: ");
-            _snackVM.ValidateProductOption(Console.ReadLine());
+            _ = _snackVM.ValidateProductOption(Console.ReadLine());
 
 
             Console.WriteLine("Please Insert The Required Amount: ");
-            _snackVM.AddPayment(0.1,"USD",MoneySlotTypes.CoinSlot);
-            _snackVM.AddPayment(0.5, "USD", MoneySlotTypes.CoinSlot);
-            _snackVM.AddPayment(0.2, "USD", MoneySlotTypes.CoinSlot);
-            _snackVM.AddPayment(1, "USD", MoneySlotTypes.CoinSlot);
-            _snackVM.AddPayment(20, "USD", MoneySlotTypes.NoteSlot);
-            _snackVM.AddPayment(0.5, "USD", MoneySlotTypes.CoinSlot);
-
+            _ = _snackVM.AddPayment(0.1,"USD",MoneySlotTypes.CoinSlot);
+            _ = _snackVM.AddPayment(0.5, "USD", MoneySlotTypes.CoinSlot);
+            _ = _snackVM.AddPayment(0.2, "USD", MoneySlotTypes.CoinSlot);
+            _ = _snackVM.AddPayment(1, "USD", MoneySlotTypes.CoinSlot);
+            _ = _snackVM.AddPayment(20, "USD", MoneySlotTypes.NoteSlot);
+            _ = _snackVM.AddPayment(0.5, "USD", MoneySlotTypes.CoinSlot);
+            
             _snackVM.ValidateExchange();
             _snackVM.MakePayment();
             _snackVM.DispenseProduct();

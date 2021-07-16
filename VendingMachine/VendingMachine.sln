@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnacksVM", "SnacksVM\SnacksVM.csproj", "{1483CD2B-C021-45E4-8888-14406EC20637}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Products", "Products\Products.csproj", "{B95D5BAA-0B3C-4EF9-A011-DDF2A8CC0B5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Products", "Products\Products.csproj", "{B95D5BAA-0B3C-4EF9-A011-DDF2A8CC0B5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factory", "Factory\Factory.csproj", "{36EDFB93-DFF2-4F75-AE27-BE6FB7377EAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Factory", "Factory\Factory.csproj", "{36EDFB93-DFF2-4F75-AE27-BE6FB7377EAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneySlots", "MoneySlots\MoneySlots.csproj", "{D0E6E237-36C9-4CC2-B8BF-363612EEE2A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoneySlots", "MoneySlots\MoneySlots.csproj", "{D0E6E237-36C9-4CC2-B8BF-363612EEE2A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{EF280B6B-D5C4-4467-85C5-F8475B785697}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D0E6E237-36C9-4CC2-B8BF-363612EEE2A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0E6E237-36C9-4CC2-B8BF-363612EEE2A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0E6E237-36C9-4CC2-B8BF-363612EEE2A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF280B6B-D5C4-4467-85C5-F8475B785697}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF280B6B-D5C4-4467-85C5-F8475B785697}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF280B6B-D5C4-4467-85C5-F8475B785697}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF280B6B-D5C4-4467-85C5-F8475B785697}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

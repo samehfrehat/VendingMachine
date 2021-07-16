@@ -44,13 +44,13 @@ namespace Factory
         }
 
 
-        public void ValidateProductOption(string position)
+        public bool ValidateProductOption(string position)
         {
             if (string.IsNullOrWhiteSpace(position) ||
                 position.Length != 2)
             {
                 Console.WriteLine("Invalid Insert");
-                return;
+                return false;
             }
 
             if (int.TryParse(position[0].ToString(), out var row) &&
@@ -61,41 +61,43 @@ namespace Factory
                 if (_product == null)
                 {
                     Console.WriteLine("Product is not available");
-                    return;
+                    return false;
                 }
 
-                Console.WriteLine($"{_product.Type} price is: {_product.Price}");
+                Console.WriteLine($"{_product.Type} price is: {_product.Price}");                
             }
+            return true;
         }
 
-        public void AddPayment(double amount, string currency, MoneySlotTypes slotType)
+        public bool AddPayment(double amount, string currency, MoneySlotTypes slotType)
         {
             switch (slotType)
             {
                 case MoneySlotTypes.CardSlot:
                     //payment gateway
-                    break;
+                    return true;
                 case MoneySlotTypes.CoinSlot:
 
                     if (_coinSlot.AddMoney(amount, currency))
                     {
                         Console.WriteLine($"Total Payment: {_coinSlot.AvailableBalance() + _noteSlot.AvailableBalance()}");
-                        break;
+                        return true;
                     }
 
                     Console.WriteLine("Invalid Coin");
-                    break;
+                    return false;
                 case MoneySlotTypes.NoteSlot:
 
                     if (_noteSlot.AddMoney(amount, currency))
                     {
                         Console.WriteLine($"Total Payment: {_coinSlot.AvailableBalance() + _noteSlot.AvailableBalance()}");
-                        break;
+                        return true;
                     }
 
                     Console.WriteLine("Invalid Note");
-                    break;
+                    return false;
             }
+            return true;
         }
 
         public void ValidateExchange()

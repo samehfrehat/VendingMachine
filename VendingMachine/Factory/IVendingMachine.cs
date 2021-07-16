@@ -10,9 +10,9 @@ namespace Factory
 
         Dictionary<(int, int), IProduct> GetProducts();
 
-        void ValidateProductOption(string position);
+        bool ValidateProductOption(string position);
 
-        void AddPayment(double amount, string currency, MoneySlotTypes slotType);
+        bool AddPayment(double amount, string currency, MoneySlotTypes slotType);
 
         void ValidateExchange();
 
